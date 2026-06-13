@@ -8,7 +8,7 @@ const translations = {
   en: {
     nav_home:'Home', nav_services:'Services', nav_solutions:'Solutions', nav_projects:'Projects', nav_feedback:'Feedback', nav_contact:'Contact', nav_cta:'Get Started',
     tagline:'SMART SYSTEMS. REAL GROWTH.', hero_title:'We build intelligent systems that drive <span>real growth.</span>', hero_lead:'NEXIS helps businesses automate operations, manage customers and make smarter decisions with modern web, AI, CRM and analytics solutions.', book_consultation:'Book a Consultation', view_work:'View Our Work',
-    trusted_title:'Trusted by innovative businesses', services_eyebrow:'OUR SERVICES', services_title:'Smart solutions for modern businesses', services_lead:'We design digital systems that help companies work smarter, save time and increase productivity.', learn_more:'Learn more →',
+    trusted_title:'Built on principles that matter.', services_eyebrow:'OUR SERVICES', services_title:'Smart solutions for modern businesses', services_lead:'We design digital systems that help companies work smarter, save time and increase productivity.', learn_more:'Learn more →',
     service_web_title:'Web Development', service_web_text:'Premium websites, landing pages and platforms designed to convert visitors into clients.', service_ai_title:'AI Solutions', service_ai_text:'AI assistants and smart tools for support, booking, lead generation and business tasks.', service_auto_title:'Business Automation', service_auto_text:'Workflows that connect forms, emails, WhatsApp, CRM and reports automatically.', service_crm_title:'CRM & Custom Systems', service_crm_text:'Dashboards and internal tools to manage clients, sales, appointments and operations.',
     about_eyebrow:'ABOUT NEXIS', about_title:'Technology with purpose. Solutions with impact.', about_text:'NEXIS Intelligence Systems is a technology brand focused on building reliable, beautiful and scalable digital systems for businesses ready to grow.', about_li1:'Innovation at the core', about_li2:'Quality you can trust', about_li3:'Solutions that scale with you', about_li4:'Support that truly cares', about_btn:'Discover More About Us',
     stat_projects:'Projects Completed', stat_clients:'Happy Clients', stat_satisfaction:'Client Satisfaction', stat_support:'Support Available', projects_eyebrow:'OUR PROJECTS', projects_title:'Solutions we are proud of', projects_lead:'Real projects. Real impact.', project_1_title:'E-Commerce Platform', project_1_text:'Full-stack online shop solution.', project_2_title:'AI Chat Assistant', project_2_text:'Virtual assistant for customer support.', project_3_title:'Business Dashboard', project_3_text:'Analytics and reporting system.', project_4_title:'Restaurant POS System', project_4_text:'Ordering, tables and kitchen tracking.',
@@ -22,7 +22,7 @@ const translations = {
   fr: {
     nav_home:'Accueil', nav_services:'Services', nav_solutions:'Solutions', nav_projects:'Projets', nav_feedback:'Avis', nav_contact:'Contact', nav_cta:'Commencer',
     tagline:'SMART SYSTEMS. REAL GROWTH.', hero_title:'Nous créons des systèmes intelligents qui génèrent une <span>vraie croissance.</span>', hero_lead:'NEXIS aide les entreprises à automatiser leurs opérations, gérer leurs clients et prendre de meilleures décisions avec des solutions web, IA, CRM et analytics.', book_consultation:'Réserver une consultation', view_work:'Voir nos projets',
-    trusted_title:'Approuvé par des entreprises innovantes', services_eyebrow:'NOS SERVICES', services_title:'Des solutions intelligentes pour les entreprises modernes', services_lead:'Nous concevons des systèmes digitaux qui aident les entreprises à mieux travailler, gagner du temps et augmenter leur productivité.', learn_more:'En savoir plus →',
+    trusted_title:'Fondé sur des principes qui comptent.', services_eyebrow:'NOS SERVICES', services_title:'Des solutions intelligentes pour les entreprises modernes', services_lead:'Nous concevons des systèmes digitaux qui aident les entreprises à mieux travailler, gagner du temps et augmenter leur productivité.', learn_more:'En savoir plus →',
     service_web_title:'Développement Web', service_web_text:'Sites web, landing pages et plateformes premium conçus pour convertir les visiteurs en clients.', service_ai_title:'Solutions IA', service_ai_text:'Assistants IA et outils intelligents pour le support, les réservations, les leads et les tâches business.', service_auto_title:'Automatisation Business', service_auto_text:'Des workflows qui connectent formulaires, emails, WhatsApp, CRM et rapports automatiquement.', service_crm_title:'CRM & Systèmes sur mesure', service_crm_text:'Dashboards et outils internes pour gérer clients, ventes, rendez-vous et opérations.',
     about_eyebrow:'À PROPOS DE NEXIS', about_title:'Une technologie utile. Des solutions avec impact.', about_text:'NEXIS Intelligence Systems est une marque technologique spécialisée dans la création de systèmes digitaux fiables, beaux et évolutifs pour les entreprises prêtes à grandir.', about_li1:'Innovation au centre', about_li2:'Qualité fiable', about_li3:'Solutions qui évoluent avec vous', about_li4:'Support sérieux et humain', about_btn:'Découvrir NEXIS',
     stat_projects:'Projets réalisés', stat_clients:'Clients satisfaits', stat_satisfaction:'Satisfaction client', stat_support:'Support disponible', projects_eyebrow:'NOS PROJETS', projects_title:'Des solutions dont nous sommes fiers', projects_lead:'De vrais projets. Un vrai impact.', project_1_title:'Plateforme E-Commerce', project_1_text:'Solution complète de boutique en ligne.', project_2_title:'Assistant Chat IA', project_2_text:'Assistant virtuel pour le support client.', project_3_title:'Dashboard Business', project_3_text:'Système d’analyse et de reporting.', project_4_title:'Système POS Restaurant', project_4_text:'Commandes, tables et suivi cuisine.',
@@ -171,3 +171,37 @@ window.addEventListener('load', () => {
 });
 
 setLanguage(currentLang);
+
+
+// Supabase integration for comment submission
+const SUPABASE_URL = "https://kawsnbctlbstliumllck.supabase.co/rest/v1/comments";
+const SUPABASE_KEY = "sb_publishable_rj-O4uvznATcF1dtKYLlVw_B3NI8otf";
+
+const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+document.querySelector("#commentForm").addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  const name = document.querySelector("#name").value;
+  const role = document.querySelector("#role").value;
+  const message = document.querySelector("#message").value;
+
+  const { error } = await supabaseClient
+    .from("comments")
+    .insert([
+      {
+        name: name,
+        role: role,
+        message: message,
+        status: "pending"
+      }
+    ]);
+
+  if (error) {
+    alert("Error sending comment.");
+    console.log(error);
+  } else {
+    alert("Thank you! Your comment has been submitted for review.");
+    document.querySelector("#commentForm").reset();
+  }
+});

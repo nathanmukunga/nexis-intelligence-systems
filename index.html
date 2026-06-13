@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/style.css" />
   <link rel="icon" href="assets/nx-logo-black.png" type="image/x-icon">
+  <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
   <!-- Splash loader: logo shown first when the site opens, then it fades out like X/Twitter. -->
@@ -67,8 +68,8 @@
     </section>
 
     <section class="trusted">
-      <p data-i18n="trusted_title">Trusted by innovative businesses</p>
-      <div><span>TechNova</span><span>Digitally</span><span>Elevate</span><span>Innovex</span><span>CloudSphere</span></div>
+      <p data-i18n="trusted_title">Built on principles that matter.</p>
+      <div><span>🔒 Secure Solutions</span><span>⚡ Fast Delivery</span><span>🤝 Transparent Communication</span><span>💡 Innovative Thinking</span><span>🛠 Ongoing Support</span></div>
     </section>
 
     <section class="section" id="services">
@@ -173,8 +174,10 @@ business.scale(growth);</code></pre></div>
 
       <form class="comment-form" id="commentForm">
         <h3 data-i18n="comment_title">Leave a Comment</h3>
-        <div class="form-row"><input type="text" id="commentName" data-i18n-placeholder="comment_name" placeholder="Your name" required><input type="text" id="commentRole" data-i18n-placeholder="comment_role" placeholder="Business / role" required></div>
-        <textarea id="commentText" data-i18n-placeholder="comment_message" placeholder="Write your feedback..." required></textarea>
+        <div class="form-row">
+          <input type="text" id="name" data-i18n-placeholder="comment_name" placeholder="Your name" required>
+        <input type="text" id="role" data-i18n-placeholder="comment_role" placeholder="Business / role" required></div>
+        <textarea id="message" data-i18n-placeholder="comment_message" placeholder="Write your feedback..." required></textarea>
         <button class="btn" type="submit" data-i18n="comment_btn">Submit Comment</button>
         <small id="commentNote" data-i18n="comment_note">Your comment appears instantly on this page.</small>
       </form>
@@ -188,13 +191,27 @@ business.scale(growth);</code></pre></div>
         <div class="contact-card"><strong>Email</strong><a href="mailto:hello@nexisystems.com">hello@nexisystems.com</a></div>
         <div class="contact-card"><strong>WhatsApp</strong><a href="https://wa.me/900000000000">+90 000 000 0000</a></div>
         <div class="contact-card"><strong>Website</strong><a href="#home">nexisystems.com</a></div>
-        <i class="fab fa-instagram">Instagram</i>
-        <i class="fab fa-facebook">Facebook</i>
-        <i class="fab fa-linkedin">LinkedIn</i>
-        <i class="fab fa-whatsapp">WhatsApp</i>
-        <i class="fab fa-gmail">Email</i>
+        
+        <div class="social-icons">
+          <a href="https://instagram.com/" target="_blank">
+              <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://facebook.com/" target="_blank">
+              <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://linkedin.com/" target="_blank">
+              <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://wa.me/900000000000" target="_blank">
+              <i class="fab fa-whatsapp"></i>
+          </a>
+          <a href="mailto:hello@nexisystems.com">
+              <i class="fas fa-envelope"></i>
+          </a>
       </div>
-    
+      
+      </div>
+
       <form class="contact-form" id="contactForm">
         <label><span data-i18n="form_name">Name</span><input type="text" data-i18n-placeholder="form_name_ph" placeholder="Your full name" required></label>
         <label><span data-i18n="form_email">Email</span><input type="email" data-i18n-placeholder="form_email_ph" placeholder="your@email.com" required></label>
@@ -229,6 +246,7 @@ business.scale(growth);</code></pre></div>
     </div>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="js/script.js"></script>
 </body>
 </html>

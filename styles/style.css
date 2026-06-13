@@ -356,3 +356,56 @@ html[data-theme="light"] .mini-card strong{
 html[data-theme="dark"] .hero-bg{
   background:none !important;
 }
+
+/* Social links section: clean and simple with hover effect. */
+.social-icons {
+    display: flex;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.social-icons a {
+    font-size: 32px;
+    transition: 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: translateY(-5px) scale(1.1);
+}
+.social-icons .fa-instagram {
+    color: #E4405F;
+}
+
+.social-icons .fa-facebook-f {
+    color: #1877F2;
+}
+
+.social-icons .fa-linkedin-in {
+    color: #0A66C2;
+}
+
+.social-icons .fa-whatsapp {
+    color: #25D366;
+}
+
+.social-icons .fa-envelope {
+    color: #EA4335;
+}
+.social-icons a {
+    width: 50px;
+    height: 50px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.3);
+}
