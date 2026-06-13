@@ -1,0 +1,358 @@
+:root{--blue:#006dff;--blue2:#00a3ff;--bg:#f7faff;--surface:#fff;--surface2:#eef5ff;--text:#07111f;--muted:#657083;--border:#dfe8f5;--shadow:0 25px 70px rgba(4,24,52,.12);--glow:0 0 40px rgba(0,109,255,.25)}
+html[data-theme="dark"]{--bg:#02060d;--surface:#07101c;--surface2:#0b1625;--text:#f7fbff;--muted:#aab6c8;--border:#173252;--shadow:0 25px 70px rgba(0,0,0,.45);--glow:0 0 50px rgba(0,109,255,.35)}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:Inter,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}a{text-decoration:none;color:inherit}button,input,textarea,select{font:inherit}.site-header{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:20px 5%;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(18px);border-bottom:1px solid var(--border)}.brand{display:flex;align-items:center;gap:14px}.brand-logo-img{width:46px;height:34px;object-fit:contain;border-radius:4px}.brand-text strong{display:block;letter-spacing:10px;font-size:18px}.brand-text small{display:block;font-size:8px;letter-spacing:2px;color:var(--muted)}.nav-menu{display:flex;align-items:center;gap:22px;font-size:14px;font-weight:700}.nav-menu a:hover{color:var(--blue)}.btn,.theme-toggle{display:inline-flex;align-items:center;justify-content:center;border-radius:10px;border:1px solid var(--blue);background:linear-gradient(135deg,var(--blue),#004cff);color:#fff;padding:14px 22px;font-weight:800;box-shadow:var(--glow);cursor:pointer}.btn-small{padding:11px 17px;font-size:13px}.btn-ghost,.theme-toggle{background:transparent;color:var(--text);border-color:var(--border);box-shadow:none}.theme-toggle{padding:10px 13px}.lang-switch{display:flex;border:1px solid var(--border);border-radius:999px;overflow:hidden;background:var(--surface)}.lang-switch button{border:0;background:transparent;color:var(--muted);font-weight:900;font-size:12px;padding:9px 10px;cursor:pointer}.lang-switch button.active{background:var(--blue);color:#fff}.nav-toggle{display:none;background:none;border:0;gap:5px;flex-direction:column}.nav-toggle span{width:26px;height:2px;background:var(--text)}
+.hero{position:relative;min-height:720px;display:grid;grid-template-columns:1fr 1.25fr;align-items:center;gap:70px;padding:80px 5% 70px;border-bottom:1px solid var(--border)}.hero-bg{position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 80% 22%,rgba(0,109,255,.18),transparent 35%),radial-gradient(circle at 30% 80%,rgba(0,163,255,.1),transparent 30%)}.eyebrow{font-size:13px;font-weight:900;letter-spacing:1.6px;color:var(--blue);text-transform:uppercase}.center{text-align:center}.hero h1{font-size:clamp(43px,5vw,76px);line-height:1.04;letter-spacing:-2px;margin:18px 0}.hero h1 span{color:var(--blue)}.hero-lead{max-width:600px;color:var(--muted);font-size:18px}.hero-actions{display:flex;gap:14px;margin-top:28px}.hero-content,.hero-demo{position:relative;z-index:2}.hero-demo{border:1px solid var(--border);border-radius:24px;background:color-mix(in srgb,var(--surface) 78%,transparent);box-shadow:var(--shadow);padding:16px;backdrop-filter:blur(18px)}.demo-tabs{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:14px}.demo-tabs button{border:0;border-radius:10px;background:transparent;color:var(--muted);font-weight:900;padding:12px;cursor:pointer}.demo-tabs button.active{background:rgba(0,109,255,.14);color:var(--blue)}.demo-screen{min-height:360px;border:1px solid var(--border);border-radius:20px;background:radial-gradient(circle at 78% 45%,rgba(0,109,255,.28),transparent 33%),linear-gradient(135deg,color-mix(in srgb,var(--surface) 94%,var(--blue)),var(--surface));padding:24px;overflow:hidden;transition:.4s}.demo-screen.fade{animation:fadein .45s ease}@keyframes fadein{from{opacity:.55;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}.demo-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}.demo-title h3{font-size:22px;color:var(--blue)}.status{font-size:12px;font-weight:900;color:#17c964;background:rgba(23,201,100,.12);padding:8px 10px;border-radius:999px}.demo-layout{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center}.chat,.posbox,.analytics-card,.metrics{border:1px solid var(--border);border-radius:18px;background:rgba(0,0,0,.08);padding:18px}.chat p,.posbox p{margin:10px 0;color:var(--muted)}.line{height:1px;background:var(--border);margin:12px 0}.ai-orb{width:170px;height:170px;margin:auto;border-radius:50%;display:grid;place-items:center;font-size:46px;font-weight:900;color:#fff;background:radial-gradient(circle,var(--blue2),var(--blue) 60%,#022a80);box-shadow:0 0 60px rgba(0,109,255,.55);animation:float 3s ease-in-out infinite}@keyframes float{50%{transform:translateY(-10px)}}.mini-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.mini-card{border:1px solid var(--border);border-radius:14px;padding:16px;background:rgba(0,109,255,.08)}.mini-card strong{font-size:24px;color:var(--blue)}.bars{display:flex;align-items:end;gap:9px;height:120px}.bars span{flex:1;border-radius:6px;background:linear-gradient(var(--blue2),var(--blue));animation:pulse 1.6s infinite alternate}.bars span:nth-child(1){height:35%}.bars span:nth-child(2){height:60%;animation-delay:.2s}.bars span:nth-child(3){height:45%;animation-delay:.4s}.bars span:nth-child(4){height:85%;animation-delay:.6s}.bars span:nth-child(5){height:70%;animation-delay:.8s}@keyframes pulse{to{filter:brightness(1.4);transform:scaleY(1.05)}}.demo-dots{text-align:center;margin-top:14px}.demo-dots span{display:inline-block;width:8px;height:8px;margin:0 4px;border-radius:50%;background:var(--border)}.demo-dots span.active{width:24px;border-radius:999px;background:var(--blue)}
+.trusted{padding:38px 5%;border-bottom:1px solid var(--border);text-align:center}.trusted p{font-size:12px;text-transform:uppercase;color:var(--muted);font-weight:800;letter-spacing:1px}.trusted div{display:flex;justify-content:center;flex-wrap:wrap;gap:50px;margin-top:18px;color:var(--muted);font-weight:800}.section{padding:86px 5%;text-align:center}.section h2,.about h2,.solutions h2,.cta h2,.contact h2{font-size:clamp(30px,4vw,48px);line-height:1.08;letter-spacing:-1px}.section-lead{max-width:680px;margin:14px auto 42px;color:var(--muted)}.service-grid,.project-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}.card,.project-card,.feedback-card{border:1px solid var(--border);border-radius:18px;background:var(--surface);padding:28px;text-align:left;box-shadow:0 15px 45px rgba(0,0,0,.04);transition:.3s}.card:hover,.project-card:hover,.feedback-card:hover{transform:translateY(-8px);border-color:var(--blue);box-shadow:var(--shadow)}.card i{display:grid;place-items:center;width:48px;height:48px;border:1px solid var(--border);border-radius:14px;color:var(--blue);font-weight:900;font-style:normal;margin-bottom:24px}.card h3,.project-card h3{font-size:18px;margin-bottom:10px}.card p,.project-card p{color:var(--muted);font-size:14px}.card a{display:inline-block;margin-top:20px;color:var(--blue);font-weight:900}.about{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;padding:80px 5%;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}.code-window{border:1px solid var(--border);border-radius:22px;background:#06101e;box-shadow:var(--shadow);overflow:hidden}.window-bar{height:48px;display:flex;gap:8px;align-items:center;padding:0 18px;border-bottom:1px solid #19314e}.window-bar span{width:12px;height:12px;border-radius:50%;background:#ff5f57}.window-bar span:nth-child(2){background:#ffbd2e}.window-bar span:nth-child(3){background:#28c840}pre{padding:28px;color:#bfe2ff;font-size:16px;overflow:auto}.about-text p{color:var(--muted);margin:18px 0}.about-text ul{list-style:none;margin:24px 0}.about-text li{margin:10px 0;color:var(--muted)}.about-text li:before{content:'✓';color:var(--blue);font-weight:900;margin-right:10px}.stats{display:grid;grid-template-columns:repeat(4,1fr);padding:32px 5%;border-bottom:1px solid var(--border)}.stats div{text-align:center}.stats strong{font-size:34px;color:var(--blue)}.stats span{display:block;color:var(--muted);font-weight:700}.project-img{height:150px;border-radius:14px;margin-bottom:18px;background:radial-gradient(circle at 70% 30%,rgba(0,109,255,.65),transparent 35%),linear-gradient(135deg,#06101e,#0b2442)}.project-img:after{content:'';display:block;height:100%;background:repeating-linear-gradient(90deg,transparent 0 18px,rgba(255,255,255,.08) 18px 20px)}.solutions{margin:30px 5%;padding:48px;border:1px solid var(--border);border-radius:24px;background:linear-gradient(135deg,rgba(0,109,255,.14),transparent),var(--surface);display:grid;grid-template-columns:1fr 1.3fr;gap:40px;align-items:center}.solutions p{color:var(--muted);margin-top:12px}.workflow{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;align-items:center}.workflow span{padding:14px 18px;border:1px solid var(--border);border-radius:14px;background:var(--bg);font-weight:800}.workflow b{color:var(--blue)}
+.feedback{border-top:1px solid var(--border)}.feedback-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:42px}.feedback-card div{color:#ffb000;letter-spacing:2px;margin-bottom:14px}.feedback-card p{font-size:18px;color:var(--text);margin-bottom:22px}.feedback-card span{display:block;color:var(--muted)}.comment-form{margin:32px auto 0;max-width:1180px;text-align:left;border:1px solid var(--border);border-radius:24px;background:var(--surface);padding:30px}.comment-form h3{font-size:22px;margin-bottom:18px}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}.comment-form input,.comment-form textarea,.contact-form input,.contact-form textarea,.contact-form select{width:100%;background:var(--bg);border:1px solid var(--border);border-radius:15px;color:var(--text);padding:16px 18px;outline:none}.comment-form textarea,.contact-form textarea{min-height:120px;resize:vertical;margin-top:14px}.comment-form .btn{margin-top:14px;min-width:280px}.comment-form small,.contact-form small{display:block;margin-top:12px;color:var(--muted)}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:70px;padding:90px 5%;border-top:1px solid var(--border)}.contact-info>p:not(.eyebrow){color:var(--muted);font-size:18px;margin:24px 0 30px;max-width:620px}.contact-card{border:1px solid var(--border);background:var(--surface);border-radius:22px;padding:22px;margin-bottom:14px}.contact-card strong{display:block;color:var(--muted);margin-bottom:6px}.contact-card a{color:#9bd0ff}.contact-form{border:1px solid var(--border);border-radius:26px;background:var(--surface);padding:28px;box-shadow:var(--shadow)}.contact-form label{display:block;margin-bottom:15px}.contact-form label span{display:block;font-weight:800;color:var(--muted);margin:0 0 8px}.contact-form .btn{width:100%;margin-top:4px;color:#fff}.contact-form small.success{color:#17c964}.footer{display:grid;grid-template-columns:2fr 1fr 1fr 1.4fr;gap:38px;padding:55px 5%;border-top:1px solid var(--border);background:color-mix(in srgb,var(--surface) 70%,var(--bg))}.footer p,.footer a{display:block;color:var(--muted);margin:9px 0}.footer h4{margin-bottom:14px}
+.chat-widget{position:fixed;right:24px;bottom:24px;z-index:80}.chat-bubble{width:60px;height:60px;border:0;border-radius:50%;background:linear-gradient(135deg,#111827,var(--blue));color:#fff;font-size:24px;box-shadow:var(--glow);cursor:pointer}.chat-panel{position:absolute;right:0;bottom:76px;width:min(370px,calc(100vw - 36px));background:var(--surface);border:1px solid var(--border);border-radius:22px;box-shadow:var(--shadow);overflow:hidden;display:none}.chat-panel.open{display:block;animation:fadein .28s ease}.chat-head{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;border-bottom:1px solid var(--border)}.chat-head button{border:0;background:transparent;color:var(--text);font-size:26px;cursor:pointer}.chat-body{padding:18px}.bot-msg,.user-msg{border-radius:16px;padding:13px 15px;margin-bottom:10px}.bot-msg{background:var(--surface2)}.user-msg{background:var(--blue);color:#fff;margin-left:44px}.quick{display:block;width:100%;border:1px solid var(--border);border-radius:13px;background:transparent;color:var(--text);font-weight:800;padding:12px;margin:8px 0;cursor:pointer}.quick:hover{border-color:var(--blue);color:var(--blue)}.chat-input{display:flex;gap:8px;padding:14px;border-top:1px solid var(--border)}.chat-input input{flex:1;background:var(--bg);border:1px solid var(--border);color:var(--text);border-radius:14px;padding:12px}.chat-input button{border:0;border-radius:14px;background:#fff;color:#000;font-weight:900;padding:0 18px;cursor:pointer}
+@media(max-width:1050px){.nav-menu{gap:14px}.hero,.about,.solutions,.contact{grid-template-columns:1fr}.service-grid,.project-grid,.stats,.footer,.feedback-grid{grid-template-columns:repeat(2,1fr)}.hero{padding-top:45px}.demo-layout{grid-template-columns:1fr}.demo-tabs{grid-template-columns:1fr 1fr}.site-header{align-items:flex-start}.nav-menu{position:fixed;inset:74px 0 auto 0;background:var(--bg);border-bottom:1px solid var(--border);padding:24px;display:none;flex-direction:column;align-items:stretch}.nav-menu.open{display:flex}.nav-toggle{display:flex;margin-top:9px}.lang-switch{width:max-content}.hero-demo{padding:10px}.demo-screen{padding:14px}}
+@media(max-width:650px){.service-grid,.project-grid,.stats,.footer,.feedback-grid,.form-row{grid-template-columns:1fr}.hero-actions,.cta div{flex-direction:column}.brand-text strong{letter-spacing:6px}.trusted div{gap:20px}.section{padding:62px 5%}.comment-form .btn{min-width:auto;width:100%}.contact{padding:65px 5%}.chat-widget{right:16px;bottom:16px}.hero{gap:36px;min-height:auto}.demo-tabs{grid-template-columns:1fr}.ai-orb{width:140px;height:140px}}
+
+
+/* =========================================================
+   NEXIS UPDATE: Splash screen, clean project previews,
+   and reduced brightness/shadow effects.
+   These comments are here to help you understand where
+   the latest requested changes were added.
+   ========================================================= */
+
+/* First screen shown before the website content appears. */
+.splash-loader{
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  display:grid;
+  place-items:center;
+  background:#000;
+  transition:opacity .75s ease, visibility .75s ease;
+}
+.splash-loader img{
+  width:min(230px,45vw);
+  height:auto;
+  animation:splashPop 1.25s ease both;
+}
+.splash-loader.hide{
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+}
+@keyframes splashPop{
+  0%{opacity:0;transform:scale(.86)}
+  55%{opacity:1;transform:scale(1.04)}
+  100%{opacity:1;transform:scale(1)}
+}
+
+/* Remove the bright glow / heavy shadow effect on buttons and cards. */
+.btn,
+.theme-toggle,
+.chat-bubble,
+.contact-form,
+.hero-demo,
+.code-window,
+.card,
+.project-card,
+.feedback-card,
+.chat-panel{
+  box-shadow:none !important;
+}
+.btn:hover,
+.theme-toggle:hover,
+.chat-bubble:hover,
+.quick:hover,
+.card:hover,
+.project-card:hover,
+.feedback-card:hover{
+  filter:none !important;
+  transform:none !important;
+  box-shadow:none !important;
+}
+
+/* Cleaner button style: still premium, but without bright glow. */
+.btn,
+.theme-toggle{
+  box-shadow:none !important;
+}
+.btn{
+  background:var(--blue);
+}
+.btn-ghost,
+.theme-toggle{
+  background:transparent;
+}
+
+/* The bar animation keeps movement but removes the brightness pulse. */
+@keyframes pulse{
+  to{transform:scaleY(1.04)}
+}
+
+/* Project image area: replaces empty gradients with real UI-style visuals. */
+.project-img{
+  position:relative;
+  overflow:hidden;
+  display:grid;
+  place-items:center;
+  isolation:isolate;
+}
+.project-img:before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 72% 28%,rgba(0,109,255,.55),transparent 34%),
+    linear-gradient(135deg,#06101e,#0b2442);
+  z-index:-2;
+}
+.project-img:after{
+  position:absolute;
+  inset:0;
+  height:auto;
+  background:
+    linear-gradient(90deg,transparent,rgba(0,109,255,.14),transparent),
+    repeating-linear-gradient(90deg,transparent 0 18px,rgba(255,255,255,.08) 18px 20px);
+  z-index:-1;
+}
+.project-visual{
+  width:82%;
+  height:78%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  border:1px solid rgba(95,169,255,.22);
+  border-radius:18px;
+  background:rgba(2,6,13,.55);
+  backdrop-filter:blur(8px);
+}
+.project-icon{
+  display:grid;
+  place-items:center;
+  width:54px;
+  height:54px;
+  border-radius:16px;
+  border:1px solid rgba(0,109,255,.45);
+  color:#fff;
+  background:rgba(0,109,255,.18);
+  font-weight:900;
+  font-size:19px;
+}
+.mock-window,.chat-lines,.mini-chart,.pos-ticket{
+  width:128px;
+  min-height:80px;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:14px;
+  background:rgba(255,255,255,.05);
+  padding:12px;
+}
+.mock-window b,.pos-ticket b{
+  display:block;
+  color:#fff;
+  font-size:12px;
+  margin-bottom:8px;
+}
+.mock-window i,.chat-lines i,.pos-ticket i{
+  display:block;
+  height:8px;
+  border-radius:999px;
+  margin:8px 0;
+  background:rgba(155,208,255,.55);
+}
+.mock-window i:nth-child(3),.chat-lines i:nth-child(2),.pos-ticket i:nth-child(3){width:72%}
+.mock-window i:nth-child(4),.chat-lines i:nth-child(3),.pos-ticket i:nth-child(4){width:48%}
+.chat-lines i:nth-child(1){width:95%}
+.mini-chart{
+  display:flex;
+  gap:9px;
+  align-items:flex-end;
+}
+.mini-chart i{
+  flex:1;
+  border-radius:8px 8px 3px 3px;
+  background:linear-gradient(#00a3ff,#006dff);
+}
+.mini-chart i:nth-child(1){height:28px}
+.mini-chart i:nth-child(2){height:54px}
+.mini-chart i:nth-child(3){height:40px}
+.mini-chart i:nth-child(4){height:68px}
+
+/* Light mode keeps the visuals visible and clean. */
+html[data-theme="light"] .project-visual{
+  background:rgba(255,255,255,.72);
+  border-color:rgba(0,109,255,.18);
+}
+html[data-theme="light"] .mock-window,
+html[data-theme="light"] .chat-lines,
+html[data-theme="light"] .mini-chart,
+html[data-theme="light"] .pos-ticket{
+  background:rgba(7,17,31,.06);
+  border-color:rgba(0,109,255,.16);
+}
+html[data-theme="light"] .mock-window b,
+html[data-theme="light"] .pos-ticket b{
+  color:#07111f;
+}
+
+@media(max-width:650px){
+  .splash-loader img{width:150px}
+  .project-visual{width:88%;gap:10px}
+  .mock-window,.chat-lines,.mini-chart,.pos-ticket{width:110px}
+}
+
+
+/* =========================================================
+   NEXIS CLEAN UPDATE V4
+   Request: light mode must be full white, no blue brightness;
+   project cards should use colorful logo-style visuals.
+   ========================================================= */
+
+/* Light theme: pure white background, no blue glow/brightness. */
+html[data-theme="light"]{
+  --bg:#ffffff;
+  --surface:#ffffff;
+  --surface2:#ffffff;
+  --border:#e3e9f2;
+  --shadow:none;
+  --glow:none;
+}
+html[data-theme="light"] body,
+html[data-theme="light"] .hero,
+html[data-theme="light"] .section,
+html[data-theme="light"] .feedback,
+html[data-theme="light"] .contact,
+html[data-theme="light"] .trusted{
+  background:#ffffff !important;
+}
+html[data-theme="light"] .hero-bg{
+  display:none !important;
+}
+html[data-theme="light"] .hero-demo,
+html[data-theme="light"] .demo-screen,
+html[data-theme="light"] .contact-form,
+html[data-theme="light"] .comment-form,
+html[data-theme="light"] .card,
+html[data-theme="light"] .project-card,
+html[data-theme="light"] .feedback-card,
+html[data-theme="light"] .contact-card{
+  background:#ffffff !important;
+  box-shadow:none !important;
+}
+html[data-theme="light"] .demo-screen{
+  background:#ffffff !important;
+}
+html[data-theme="light"] .demo-tabs button.active{
+  background:#ffffff !important;
+  border:1px solid var(--blue);
+  color:var(--blue);
+}
+html[data-theme="light"] .mini-card,
+html[data-theme="light"] .chat,
+html[data-theme="light"] .posbox,
+html[data-theme="light"] .analytics-card,
+html[data-theme="light"] .metrics{
+  background:#ffffff !important;
+}
+html[data-theme="light"] .footer{
+  background:#ffffff !important;
+}
+
+/* Remove all remaining glow/brightness from main UI elements. */
+.btn,
+.theme-toggle,
+.card,
+.project-card,
+.feedback-card,
+.hero-demo,
+.contact-form,
+.comment-form,
+.chat-panel,
+.chat-bubble{
+  box-shadow:none !important;
+  filter:none !important;
+}
+.btn:hover,
+.theme-toggle:hover,
+.card:hover,
+.project-card:hover,
+.feedback-card:hover,
+.chat-bubble:hover{
+  box-shadow:none !important;
+  filter:none !important;
+  transform:none !important;
+}
+
+/* New project preview style: clean colorful logos instead of grey mockups. */
+.project-img{
+  height:150px;
+  border-radius:14px;
+  margin-bottom:18px;
+  display:grid;
+  place-items:center;
+  position:relative;
+  overflow:hidden;
+  background:#ffffff !important;
+  border:1px solid var(--border);
+}
+html[data-theme="dark"] .project-img{
+  background:#07101c !important;
+  border-color:#173252;
+}
+.project-img:before,
+.project-img:after{
+  display:none !important;
+}
+.project-logo-card{
+  width:84%;
+  height:104px;
+  border-radius:20px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  border:1px solid rgba(0,109,255,.16);
+  background:#ffffff;
+}
+html[data-theme="dark"] .project-logo-card{
+  background:#0b1625;
+  border-color:#173252;
+}
+.project-symbol{
+  width:46px;
+  height:46px;
+  border-radius:15px;
+  display:grid;
+  place-items:center;
+  margin-bottom:7px;
+  color:#ffffff;
+  font-weight:900;
+  font-size:19px;
+}
+.project-logo-card strong{
+  font-size:15px;
+  line-height:1;
+  color:var(--text);
+}
+.project-logo-card small{
+  margin-top:5px;
+  color:var(--muted);
+  font-size:12px;
+  font-weight:700;
+}
+.ecommerce-logo .project-symbol{background:linear-gradient(135deg,#ff8a00,#ff3d71)}
+.assistant-logo .project-symbol{background:linear-gradient(135deg,#006dff,#00d4ff)}
+.dashboard-logo .project-symbol{background:linear-gradient(135deg,#7c3aed,#00a3ff)}
+.pos-logo .project-symbol{background:linear-gradient(135deg,#16a34a,#f59e0b)}
+
+/* Hero demo in light mode: simple white product panel. */
+html[data-theme="light"] .hero-demo{
+  border:1px solid #e3e9f2;
+}
+html[data-theme="light"] .demo-title h3,
+html[data-theme="light"] .mini-card strong{
+  color:#006dff;
+}
+
+/* Keep the dark version premium but without heavy glow. */
+html[data-theme="dark"] .hero-bg{
+  background:none !important;
+}

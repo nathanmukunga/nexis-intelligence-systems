@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NEXIS Intelligent Systems | AI-Powered Business Solutions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/style.css" />
+  <link rel="icon" href="assets/nx-logo-black.png" type="image/x-icon">
+</head>
+<body>
+  <!-- Splash loader: logo shown first when the site opens, then it fades out like X/Twitter. -->
+  <div class="splash-loader" id="splashLoader" aria-label="NEXIS loading screen">
+    <img src="assets/nx-logo-black.png" alt="NEXIS NX Logo" />
+  </div>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="NEXIS Home">
+      <img src="assets/nx-logo-black.png" alt="NEXIS NX logo" class="brand-logo-img" />
+      <span class="brand-text"><strong>NEXIS</strong><small>INTELLIGENCE SYSTEMS</small></span>
+    </a>
+
+    <button class="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+
+    <nav class="nav-menu">
+      <a href="#home" data-i18n="nav_home">Home</a>
+      <a href="#services" data-i18n="nav_services">Services</a>
+      <a href="#solutions" data-i18n="nav_solutions">Solutions</a>
+      <a href="#projects" data-i18n="nav_projects">Projects</a> 
+      <a href="#feedback" data-i18n="nav_feedback">Feedback</a>
+      <a href="assets/nexis_company profil.pdf" target="_blank" data-i18n="nav_portfolio">Portfolio</a>
+      <a href="#contact" data-i18n="nav_contact">Contact</a>
+      <div class="lang-switch" aria-label="Language switch">
+        <button type="button" class="active" data-lang="en">ENG</button>
+        <button type="button" data-lang="fr">FRA</button>
+      </div>
+      <button class="theme-toggle" id="themeToggle" type="button">Light Mode</button>
+      <a class="btn btn-small" href="#contact" data-i18n="nav_cta">Get Started</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-bg"></div>
+      <div class="hero-content">
+        <p class="eyebrow" data-i18n="tagline">SMART SYSTEMS. REAL GROWTH.</p>
+        <h1 data-i18n-html="hero_title">We build intelligent systems that drive <span>real growth.</span></h1>
+        <p class="hero-lead" data-i18n="hero_lead">NEXIS helps businesses automate operations, manage customers and make smarter decisions with modern web, AI, CRM and analytics solutions.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#contact" data-i18n="book_consultation">Book a Consultation</a>
+          <a class="btn btn-ghost" href="#projects" data-i18n="view_work">View Our Work</a>
+        </div>
+      </div>
+
+      <div class="hero-demo" aria-label="Interactive NEXIS demo">
+        <div class="demo-tabs" id="demoTabs">
+          <button class="active" data-demo="ai">AI</button>
+          <button data-demo="assistant">AI Assistant</button>
+          <button data-demo="crm">CRM Dashboard</button>
+          <button data-demo="pos">Restaurant POS</button>
+          <button data-demo="analytics">Analytics</button>
+        </div>
+        <div class="demo-screen" id="demoScreen"></div>
+        <div class="demo-dots" id="demoDots"></div>
+      </div>
+    </section>
+
+    <section class="trusted">
+      <p data-i18n="trusted_title">Trusted by innovative businesses</p>
+      <div><span>TechNova</span><span>Digitally</span><span>Elevate</span><span>Innovex</span><span>CloudSphere</span></div>
+    </section>
+
+    <section class="section" id="services">
+      <p class="eyebrow center" data-i18n="services_eyebrow">OUR SERVICES</p>
+      <h2 data-i18n="services_title">Smart solutions for modern businesses</h2>
+      <p class="section-lead" data-i18n="services_lead">We design digital systems that help companies work smarter, save time and increase productivity.</p>
+      <div class="service-grid">
+        <article class="card"><i>⌘</i><h3 data-i18n="service_web_title">Web Development</h3><p data-i18n="service_web_text">Premium websites, landing pages and platforms designed to convert visitors into clients.</p><a href="#contact" data-i18n="learn_more">Learn more →</a></article>
+        <article class="card"><i>AI</i><h3 data-i18n="service_ai_title">AI Solutions</h3><p data-i18n="service_ai_text">AI assistants and smart tools for support, booking, lead generation and business tasks.</p><a href="#contact" data-i18n="learn_more">Learn more →</a></article>
+        <article class="card"><i>⚙</i><h3 data-i18n="service_auto_title">Business Automation</h3><p data-i18n="service_auto_text">Workflows that connect forms, emails, WhatsApp, CRM and reports automatically.</p><a href="#contact" data-i18n="learn_more">Learn more →</a></article>
+        <article class="card"><i>▣</i><h3 data-i18n="service_crm_title">CRM & Custom Systems</h3><p data-i18n="service_crm_text">Dashboards and internal tools to manage clients, sales, appointments and operations.</p><a href="#contact" data-i18n="learn_more">Learn more →</a></article>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="about-visual">
+        <div class="code-window"><div class="window-bar"><span></span><span></span><span></span></div><pre><code>const growth = await Nexis.build({
+  website: true,
+  aiAssistant: true,
+  crm: true,
+  automation: true
+});
+
+business.scale(growth);</code></pre></div>
+      </div>
+      <div class="about-text">
+        <p class="eyebrow" data-i18n="about_eyebrow">ABOUT NEXIS</p>
+        <h2 data-i18n="about_title">Technology with purpose. Solutions with impact.</h2>
+        <p data-i18n="about_text">NEXIS Intelligence Systems is a technology brand focused on building reliable, beautiful and scalable digital systems for businesses ready to grow.</p>
+        <ul><li data-i18n="about_li1">Innovation at the core</li><li data-i18n="about_li2">Quality you can trust</li><li data-i18n="about_li3">Solutions that scale with you</li><li data-i18n="about_li4">Support that truly cares</li></ul>
+        <a class="btn" href="#contact" data-i18n="about_btn">Discover More About Us</a>
+      </div>
+    </section>
+
+    <section class="stats"><div><strong>8+</strong><span data-i18n="stat_projects">Projects Completed</span></div><div><strong>5+</strong><span data-i18n="stat_clients">Happy Clients</span></div><div><strong>88%</strong><span data-i18n="stat_satisfaction">Client Satisfaction</span></div><div><strong>24/7</strong><span data-i18n="stat_support">Support Available</span></div></section>
+
+    <section class="section" id="projects">
+      <p class="eyebrow center" data-i18n="projects_eyebrow">OUR PROJECTS</p>
+      <h2 data-i18n="projects_title">Solutions we are proud of</h2>
+      <p class="section-lead" data-i18n="projects_lead">Real projects. Real impact.</p>
+      <div class="project-grid">
+        <article class="project-card">
+          <div class="project-img ecommerce">
+            <!-- Project visual: colorful logo-style icon, not a grey placeholder -->
+            <div class="project-logo-card ecommerce-logo">
+              <span class="project-symbol">🛒</span>
+              <strong>E-Shop</strong>
+              <small>Online store</small>
+            </div>
+          </div>
+          <h3 data-i18n="project_1_title">E-Commerce Platform</h3><p data-i18n="project_1_text">Full-stack online shop solution.</p>
+        </article>
+        <article class="project-card">
+          <div class="project-img assistant">
+            <!-- Project visual: AI brand mark in color -->
+            <div class="project-logo-card assistant-logo">
+              <span class="project-symbol">AI</span>
+              <strong>Assistant</strong>
+              <small>Smart support</small>
+            </div>
+          </div>
+          <h3 data-i18n="project_2_title">AI Chat Assistant</h3><p data-i18n="project_2_text">Virtual assistant for customer support.</p>
+        </article>
+        <article class="project-card">
+          <div class="project-img dashboard">
+            <!-- Project visual: analytics logo in color -->
+            <div class="project-logo-card dashboard-logo">
+              <span class="project-symbol">📊</span>
+              <strong>Dashboard</strong>
+              <small>Live analytics</small>
+            </div>
+          </div>
+          <h3 data-i18n="project_3_title">Business Dashboard</h3><p data-i18n="project_3_text">Analytics and reporting system.</p>
+        </article>
+        <article class="project-card">
+          <div class="project-img pos">
+            <!-- Project visual: restaurant POS logo in color -->
+            <div class="project-logo-card pos-logo">
+              <span class="project-symbol">🍽️</span>
+              <strong>POS</strong>
+              <small>Restaurant system</small>
+            </div>
+          </div>
+          <h3 data-i18n="project_4_title">Restaurant POS System</h3><p data-i18n="project_4_text">Ordering, tables and kitchen tracking.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="solutions" id="solutions">
+      <div><p class="eyebrow" data-i18n="eco_eyebrow">NEXIS ECOSYSTEM</p><h2 data-i18n="eco_title">One brand, multiple intelligent products.</h2><p data-i18n="eco_text">From a professional website to an AI-powered business dashboard, NEXIS creates systems that connect together.</p></div>
+      <div class="workflow"><span data-i18n="flow_lead">Lead</span><b>→</b><span>AI Assistant</span><b>→</b><span>CRM</span><b>→</b><span data-i18n="flow_auto">Automation</span><b>→</b><span data-i18n="flow_growth">Growth</span></div>
+    </section>
+
+    <section class="feedback section" id="feedback">
+      <p class="eyebrow center" data-i18n="feedback_eyebrow">CLIENT FEEDBACK</p>
+      <h2 data-i18n="feedback_title">Proof that intelligent systems create business impact.</h2>
+      <div class="feedback-grid" id="feedbackGrid">
+        <article class="feedback-card"><div>★★★★★</div><p data-i18n="feedback_1">“NEXIS helped us automate customer questions and respond faster every day.”</p><strong>Sophie M.</strong><span data-i18n="feedback_role_1">Restaurant Owner</span></article>
+        <article class="feedback-card"><div>★★★★★</div><p data-i18n="feedback_2">“The CRM dashboard made our client follow-up much easier and more organized.”</p><strong>David L.</strong><span data-i18n="feedback_role_2">Hotel Manager</span></article>
+        <article class="feedback-card"><div>★★★★★</div><p data-i18n="feedback_3">“Professional, clean and focused on solving the real problem, not just building a website.”</p><strong>Marie K.</strong><span data-i18n="feedback_role_3">Beauty Business</span></article>
+      </div>
+
+      <form class="comment-form" id="commentForm">
+        <h3 data-i18n="comment_title">Leave a Comment</h3>
+        <div class="form-row"><input type="text" id="commentName" data-i18n-placeholder="comment_name" placeholder="Your name" required><input type="text" id="commentRole" data-i18n-placeholder="comment_role" placeholder="Business / role" required></div>
+        <textarea id="commentText" data-i18n-placeholder="comment_message" placeholder="Write your feedback..." required></textarea>
+        <button class="btn" type="submit" data-i18n="comment_btn">Submit Comment</button>
+        <small id="commentNote" data-i18n="comment_note">Your comment appears instantly on this page.</small>
+      </form>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="contact-info">
+        <p class="eyebrow" data-i18n="contact_eyebrow">CONTACT</p>
+        <h2 data-i18n="contact_title">Tell us what problem you want to solve.</h2>
+        <p data-i18n="contact_text">Whether you need a website, CRM, AI chatbot, AI agent or complete automation system, NEXIS can help you choose the right solution.</p>
+        <div class="contact-card"><strong>Email</strong><a href="mailto:hello@nexisystems.com">hello@nexisystems.com</a></div>
+        <div class="contact-card"><strong>WhatsApp</strong><a href="https://wa.me/900000000000">+90 000 000 0000</a></div>
+        <div class="contact-card"><strong>Website</strong><a href="#home">nexisystems.com</a></div>
+        <i class="fab fa-instagram">Instagram</i>
+        <i class="fab fa-facebook">Facebook</i>
+        <i class="fab fa-linkedin">LinkedIn</i>
+        <i class="fab fa-whatsapp">WhatsApp</i>
+        <i class="fab fa-gmail">Email</i>
+      </div>
+    
+      <form class="contact-form" id="contactForm">
+        <label><span data-i18n="form_name">Name</span><input type="text" data-i18n-placeholder="form_name_ph" placeholder="Your full name" required></label>
+        <label><span data-i18n="form_email">Email</span><input type="email" data-i18n-placeholder="form_email_ph" placeholder="your@email.com" required></label>
+        <label><span data-i18n="form_business">Business type</span><input type="text" data-i18n-placeholder="form_business_ph" placeholder="Restaurant, hotel, beauty salon..." required></label>
+        <label><span data-i18n="form_solution">Solution needed</span><select required><option data-i18n="form_select">Choose a solution</option><option>Website</option><option>AI Chatbot</option><option>CRM Dashboard</option><option>Restaurant POS</option><option>Business Automation</option></select></label>
+        <label><span data-i18n="form_message">Message</span><textarea data-i18n-placeholder="form_message_ph" placeholder="Explain what you want to improve in your business..." required></textarea></label>
+        <button class="btn" type="submit" data-i18n="form_btn">Request a Quote</button>
+        <small id="formStatus"></small>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div><a class="brand" href="#home"><img src="assets/nx-logo-black.png" alt="NEXIS NX logo" class="brand-logo-img" /><span class="brand-text"><strong>NEXIS</strong><small>INTELLIGENCE SYSTEMS</small></span></a><p data-i18n="footer_text">Smart systems that automate, optimize and drive real growth.</p></div>
+    <div><h4 data-i18n="footer_company">Company</h4><a href="#about" data-i18n="footer_about">About Us</a><a href="#feedback" data-i18n="footer_feedback">Feedback</a><a href="#projects" data-i18n="footer_projects">Projects</a></div>
+    <div><h4 data-i18n="footer_services">Services</h4><a data-i18n="service_web_title">Web Development</a><a data-i18n="service_ai_title">AI Solutions</a><a data-i18n="service_auto_title">Business Automation</a></div>
+    <div><h4 data-i18n="footer_contact">Contact</h4><a href="mailto:nexissystems@gmail.com" target="_blank">nexissystems@gmail.com</a><a href="tel:+90 000 000 0000" target="_blank">+90 000 000 0000</a><a href="https://maps.google.com/?q=Douala,+Cameroon" target="_blank">North Cyprus</a></div>
+  </footer>
+
+
+  <div class="chat-widget" id="chatWidget">
+    <button class="chat-bubble" id="chatBubble" aria-label="Open NEXIS chatbot">💬</button>
+    <div class="chat-panel" id="chatPanel" aria-label="NEXIS chatbot">
+      <div class="chat-head"><strong>NEXIS Assistant</strong><button type="button" id="closeChat">×</button></div>
+      <div class="chat-body" id="chatBody">
+        <div class="bot-msg" data-i18n="chat_welcome">Hi, welcome to NEXIS. What system does your business need?</div>
+        <button class="quick" data-answer="website" data-i18n="chat_opt_1">I need a website</button>
+        <button class="quick" data-answer="chatbot" data-i18n="chat_opt_2">I need an AI chatbot</button>
+        <button class="quick" data-answer="crm" data-i18n="chat_opt_3">I need CRM</button>
+      </div>
+      <form class="chat-input" id="chatForm"><input type="text" id="chatMessage" data-i18n-placeholder="chat_placeholder" placeholder="Type your message..."><button type="submit" data-i18n="chat_send">Send</button></form>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
