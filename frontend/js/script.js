@@ -575,7 +575,7 @@ if (customModal) {
 
 
 // =====================================================
-// COMMENT FORM — SAVE TO SUPABASE ONLY
+// COMMENT FORM — GET DATA AND SEND TO BACKEND
 // =====================================================
 
 const commentForm = document.querySelector("#commentForm");
@@ -589,46 +589,38 @@ if (commentForm) {
     const message = document.querySelector("#message")?.value.trim();
 
     if (!name || !role || !message) {
-      showModal(
-        "error",
-        "Missing Information",
-        "Please fill in all comment fields before submitting."
-      );
+      showModal("error", "Missing Information", "Please fill in all comment fields.");
       return;
     }
 
-    const { error } = await supabaseClient.from("comments").insert([
-      {
-        name: name,
-        role: role,
-        message: message,
-        status: "pending"
+    try {
+      const response = await fetch("http://localhost:5000/comment", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ name, role, message })
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error);
       }
-    ]);
 
-    if (error) {
-      console.log("COMMENT ERROR:", error);
-
-      showModal(
-        "error",
-        "Comment Not Sent",
-        "Something went wrong while submitting your comment. Please try again later."
-      );
-    } else {
-      showModal(
-        "success",
-        "Comment Submitted",
-        "Thank you for your feedback. Your comment will be reviewed before being published."
-      );
-
+      showModal("success", "Comment Submitted", "Thank you for your feedback.");
       commentForm.reset();
+
+    } catch (error) {
+      console.log("COMMENT ERROR:", error);
+      showModal("error", "Comment Not Sent", "Something went wrong.");
     }
   });
 }
 
 
 // =====================================================
-// CONTACT FORM — SAVE TO SUPABASE
+// CONTACT FORM — GET DATA AND SEND TO BACKEND
 // =====================================================
 
 const contactForm = document.querySelector("#contactForm");
@@ -644,48 +636,37 @@ if (contactForm) {
     const message = document.querySelector("#contactMessage")?.value.trim();
 
     if (!name || !email || !businessType || !solution || !message) {
-      showModal(
-        "error",
-        "Missing Information",
-        "Please fill in all contact fields before submitting."
-      );
+      showModal("error", "Missing Information", "Please fill in all contact fields.");
       return;
     }
 
-    const { error } = await supabaseClient.from("contacts").insert([
-      {
-        name: name,
-        email: email,
-        business_type: businessType,
-        solution: solution,
-        message: message,
-        status: "new"
+    try {
+      const response = await fetch("http://localhost:5000/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          businessType,
+          solution,
+          message
+        })
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error);
       }
-    ]);
 
-    if (error) {
-      console.log("CONTACT ERROR:", error);
-
-      showModal(
-        "error",
-        "Request Not Sent",
-        "Something went wrong while sending your request. Please try again later."
-      );
-    } else {
-      showModal(
-        "success",
-        "Request Sent Successfully",
-        "Thank you for contacting NEXIS. We will review your request and get back to you shortly."
-      );
-
+      showModal("success", "Request Sent Successfully", "Thank you for contacting NEXIS.");
       contactForm.reset();
+
+    } catch (error) {
+      console.log("CONTACT ERROR:", error);
+      showModal("error", "Request Not Sent", "Something went wrong.");
     }
   });
 }
-
-
-// =====================================================
-// INITIALIZE WEBSITE
-// =====================================================
-
-setLanguage(currentLang);
