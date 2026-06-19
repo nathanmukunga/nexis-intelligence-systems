@@ -528,6 +528,11 @@ window.addEventListener("load", () => {
 // SUPABASE CONFIGURATION
 // =====================================================
 
+const SUPABASE_URL = "https://kawsnbctlbstliumllck.supabase.co";
+const SUPABASE_KEY = "sb_publishable_rj-O4uvznATcF1dtKYLlVw_B3NI8otf";
+
+const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
 
 // =====================================================
 // CUSTOM MODAL SYSTEM
