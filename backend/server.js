@@ -80,7 +80,7 @@ app.post("/chat", async (req, res) => {
         // Vérification
         if (!message) {
             return res.status(400).json({
-                error: "Message is required."
+                error: "Message is required." 
             });
         }
 

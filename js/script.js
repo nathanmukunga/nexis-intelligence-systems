@@ -442,7 +442,7 @@ setInterval(() => {
   renderDemo((current + 1) % demoContent[currentLang].length);
 }, 4200);
 
-
+ 
 // =====================================================
 // CHAT WIDGET
 // =====================================================
@@ -495,7 +495,7 @@ document.querySelectorAll(".quick").forEach((btn) => {
 });
 
 if (chatForm && chatMessage) {
-  chatForm.addEventListener("submit", (e) => {
+  chatForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
     const msg = chatMessage.value.trim();
@@ -504,9 +504,37 @@ if (chatForm && chatMessage) {
     addChatMessage(msg, "user");
     chatMessage.value = "";
 
-    setTimeout(() => {
-      addChatMessage(translations[currentLang].chat_default);
-    }, 450);
+    addChatMessage("Typing...", "bot");
+
+    try {
+      const response = await fetch("http://localhost:5000/chat", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          message: msg
+        })
+      });
+
+      const data = await response.json();
+
+      const typingMessage = chatBody.lastChild;
+      if (typingMessage) typingMessage.remove();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Chatbot error");
+      }
+
+      addChatMessage(data.reply, "bot");
+
+    } catch (error) {
+      const typingMessage = chatBody.lastChild;
+      if (typingMessage) typingMessage.remove();
+
+      console.log("CHATBOT ERROR:", error);
+      addChatMessage("Sorry, something went wrong. Please try again.", "bot");
+    }
   });
 }
 
