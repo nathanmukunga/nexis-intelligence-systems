@@ -9,6 +9,14 @@ const express = require("express");
 const cors = require("cors");
 const fs = require("fs");
 const OpenAI = require("openai");
+const { Resend } = require("resend");
+
+// ================================
+// Initialisation de Resend
+// ================================
+const resend = new Resend(
+  process.env.RESEND_API_KEY
+);
 
 // ================================
 // Initialisation de l'application
@@ -121,6 +129,25 @@ ${knowledgeBase}
         const reply =
             completion.choices[0].message.content;
 
+        // send email notification to admin
+        await resend.emails.send({
+          from: "onboarding@resend.dev",
+          to: process.env.ADMIN_EMAIL,
+          subject: "New Chatbot Conversation",
+
+          html: `
+            <h2>New Chatbot Message</h2>
+
+            <p><strong>User:</strong></p>
+            <p>${message}</p>
+
+            <hr>
+
+            <p><strong>Bot:</strong></p>
+            <p>${reply}</p>
+          `
+        });
+
         // Envoi au frontend
         res.json({
             reply
@@ -186,6 +213,26 @@ app.post("/contact", async (req, res) => {
       });
     }
 
+    // Send email notification to admin
+    await resend.emails.send({
+      from: "onboarding@resend.dev",
+      to: process.env.ADMIN_EMAIL,
+      subject: "New NEXIS Contact Request",
+
+      html: `
+        <h2>New Contact Request</h2>
+
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Business Type:</strong> ${businessType}</p>
+        <p><strong>Solution:</strong> ${solution}</p>
+        <p><strong>Message:</strong></p>
+
+        <p>${message}</p>
+      `
+    });
+
+
     res.json({
       success: true,
       message: "Contact request saved successfully."
@@ -230,6 +277,23 @@ app.post("/comment", async (req, res) => {
     res.json({
       success: true,
       message: "Comment saved successfully."
+    });
+
+    // Send email notification to admin
+    await resend.emails.send({
+      from: "onboarding@resend.dev",
+      to: process.env.ADMIN_EMAIL,
+      subject: "New Website Comment",
+
+      html: `
+        <h2>New Comment Submitted</h2>
+
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Role:</strong> ${role}</p>
+
+        <p><strong>Comment:</strong></p>
+        <p>${message}</p>
+      `
     });
 
   } catch (error) {
