@@ -507,7 +507,7 @@ if (chatForm && chatMessage) {
     addChatMessage("Typing...", "bot");
 
     try {
-      const response = await fetch("http://localhost:5000/chat", {
+      const response = await fetch("https://nexis-backend-jbpm.onrender.com/chat", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -556,10 +556,6 @@ window.addEventListener("load", () => {
 // SUPABASE CONFIGURATION
 // =====================================================
 
-const SUPABASE_URL = "https://kawsnbctlbstliumllck.supabase.co";
-const SUPABASE_KEY = "sb_publishable_rj-O4uvznATcF1dtKYLlVw_B3NI8otf";
-
-const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 
 // =====================================================
@@ -622,7 +618,7 @@ if (commentForm) {
     }
 
     try {
-      const response = await fetch("http://localhost:5000/comment", {
+      const response = await fetch("https://nexis-backend-jbpm.onrender.com/comment", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -669,7 +665,7 @@ if (contactForm) {
     }
 
     try {
-      const response = await fetch("http://localhost:5000/contact", {
+      const response = await fetch("https://nexis-backend-jbpm.onrender.com/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
